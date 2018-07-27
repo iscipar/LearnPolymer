@@ -29,8 +29,17 @@ class MyNewView extends PolymerElement {
 
             <div class="card">
                 <div class="circle">4</div>
-                <h1>Nueva página</h1>
-                <paper-checkbox>¡Preparada para desplegar!</paper-checkbox>
+                <h1>Recursos</h1>
+                <a target="_blank" href="https://www.polymer-project.org">Polymer Project</a>
+                <br>
+                <br>
+                <a target="_blank" href="https://www.webcomponents.org">Web Components</a>
+                <br>
+                <br>
+                <a target="_blank" href="https://www.npmjs.com/">npm</a>
+                <br>
+                <br>
+                <paper-checkbox>¡Preparado para aprender!</paper-checkbox>
             </div>
         `;
     }

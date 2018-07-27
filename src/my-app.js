@@ -87,7 +87,7 @@ class MyApp extends PolymerElement {
             <a name="view1" href="[[rootPath]]view1">View One</a>
             <a name="view2" href="[[rootPath]]view2">View Two</a>
             <a name="view3" href="[[rootPath]]view3">View Three</a>
-            <a name="new-view" href="[[rootPath]]new-view">Nueva Página</a>
+            <a name="new-view" href="[[rootPath]]new-view">Recursos</a>
           </iron-selector>
         </app-drawer>
 
