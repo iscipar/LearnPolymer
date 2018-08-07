@@ -44,7 +44,8 @@ class MyView1 extends PolymerElement {
         <span id="container">
           <life-cycle-component></life-cycle-component>
         </span>
-        <paper-button raised on-click="restart">Reiniciar</paper-button>
+        <paper-button id="restart" raised on-click="restart">Reiniciar</paper-button>
+        <paper-button id="remove" raised on-click="remove">Eliminar</paper-button>
         </div>
       </div>
     `;
@@ -65,6 +66,13 @@ class MyView1 extends PolymerElement {
   restart() {
     this.shadowRoot.querySelector('#container').innerHTML = '';
     this.shadowRoot.querySelector('#container').innerHTML = '<life-cycle-component></life-cycle-component>';
+  }
+
+  remove() {
+    this.shadowRoot.querySelector('#container').innerHTML = '';
+    this.shadowRoot.querySelector('#restart').remove();
+    this.shadowRoot.querySelector('#remove').remove();
+    this.shadowRoot.querySelector('#container').innerHTML = 'El contador ha sido eliminado';
   }
 }
 

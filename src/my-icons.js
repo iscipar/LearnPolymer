@@ -31,6 +31,24 @@ $_documentContainer.innerHTML = `<iron-iconset-svg name="my-icons" size="24">
       <g id="check-box-outline-blank">
         <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
       </g>
+      <g id="mail">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </g>
+      <g id="radio-button-checked">
+        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+      </g>
+      <g id="radio-button-unchecked">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+      </g>
+      <g id="signal-cellular-0-bar">
+        <path fill-opacity=".3" d="M2 22h20V2z"/>
+      </g>
+      <g id="signal-cellular-2-bar">
+        <path fill-opacity=".3" d="M2 22h20V2z"/><path d="M14 10L2 22h12z"/>
+      </g>
+      <g id="signal-cellular-4-bar">
+        <path d="M2 22h20V2z"/>
+      </g>
     </defs>
   </svg>
 </iron-iconset-svg>`;

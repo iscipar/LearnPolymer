@@ -45,6 +45,9 @@ class MyNewView extends PolymerElement {
                 <a target="_blank" href="https://carlosazaustre.com/ecmascript-6-el-nuevo-estandar-de-javascript/">ECMAScript 6</a>
                 <br>
                 <br>
+                <a target="_blank" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a>
+                <br>
+                <br>
                 <paper-checkbox>¡Preparado para aprender!</paper-checkbox>
             </div>
         `;

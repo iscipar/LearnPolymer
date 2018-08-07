@@ -13,7 +13,7 @@ class LifeCycleComponent extends PolymerElement {
         return {
             seconds: {
                 type: Number,
-                value: 0,
+                value: -1,
                 readOnly: true
             },
             timeout: Object
@@ -60,7 +60,7 @@ class LifeCycleComponent extends PolymerElement {
     countSeconds() {
         this._setSeconds(this.seconds + 1);
         this.timeout = setTimeout(() => {
-            console.log(this.seconds);
+            console.log(this.seconds + 1);
             this.countSeconds();
         }, 1000);
     }

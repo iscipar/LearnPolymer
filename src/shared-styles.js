@@ -40,6 +40,11 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         color: #212121;
         font-size: 22px;
       }
+
+      paper-toast {
+        width: 400px;
+        margin-left: 290px;
+      }
     </style>
   </template>
 </dom-module>`;
