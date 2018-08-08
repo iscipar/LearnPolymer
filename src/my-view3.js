@@ -9,9 +9,24 @@
  */
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/paper-input/paper-input.js';
+import './components/two-way-component.js';
+import './components/native-input-component.js';
+import './components/subproperty-component.js';
+import './components/array-push-component.js';
+import './components/computed-binding-component.js';
 import './shared-styles.js';
 
 class MyView3 extends PolymerElement {
+  static get properties() {
+    return {
+      firstname: {
+        type: String,
+        value: ''
+      }
+    }
+  }
+
   static get template() {
     return html`
       <style include="shared-styles">
@@ -20,13 +35,29 @@ class MyView3 extends PolymerElement {
 
           padding: 10px;
         }
+
+        div.red {
+          color: #ef5350;
+        }
       </style>
 
       <div class="card">
         <div class="circle">3</div>
-        <h1>View Three</h1>
-        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+        <h1>One-way</h1>
+        <p>Nombre: [[firstname]]</p>
+        <paper-input label="nombre" value="[[firstname]]"></paper-input>
+        <h1>Two-way</h1>
+        <paper-input label="nombre" value="{{firstname}}"></paper-input>
+        <br>
+        <two-way-component firstname="{{firstname}}"></two-way-component>
+        <h1>Elementos nativos</h1>
+        <native-input-component label="Nombre" value="{{firstname}}"></native-input-component>
+        <h1>Subpropiedades</h1>
+        <subproperty-component></subproperty-component>
+        <h1>Arrays</h1>
+        <array-push-component></array-push-component>
+        <h1>Computado</h1>
+        <computed-binding-component></computed-binding-component>
       </div>
     `;
   }
