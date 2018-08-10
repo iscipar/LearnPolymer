@@ -46,7 +46,7 @@ class EventButtonComponent extends PolymerElement {
             },
             bubbles: true,
             composed: true
-        }))
+        }));
     }
 }
 

@@ -69,7 +69,7 @@ class AnswerComponent extends PolymerElement {
             detail: {
                 id: this.id
             }
-        }))
+        }));
     }
 }
 
