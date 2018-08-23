@@ -15,6 +15,7 @@
   "dependencies": {
     "@polymer/app-layout": "^3.0.0-pre.21",
     "@polymer/app-route": "^3.0.0-pre.21",
+    "@polymer/gold-cc-input": "^3.0.0-pre.21",
     "@polymer/iron-flex-layout": "^3.0.0-pre.21",
     "@polymer/iron-iconset-svg": "^3.0.0-pre.21",
     "@polymer/iron-media-query": "^3.0.0-pre.21",
@@ -26,6 +27,8 @@
     "@polymer/paper-icon-button": "^3.0.0-pre.21",
     "@polymer/paper-input": "^3.0.0-pre.21",
     "@polymer/paper-progress": "^3.0.0-pre.21",
+    "@polymer/paper-slider": "^3.0.0-pre.21",
+    "@polymer/paper-spinner": "^3.0.0-pre.21",
     "@polymer/paper-toast": "^3.0.0-pre.21",
     "@polymer/paper-toolbar": "^3.0.0-pre.21",
     "@polymer/polymer": "^3.0.5",
