@@ -35,10 +35,6 @@ class MyView3 extends PolymerElement {
 
           padding: 10px;
         }
-
-        div.red {
-          color: #ef5350;
-        }
       </style>
 
       <div class="card">

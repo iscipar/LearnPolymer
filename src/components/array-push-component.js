@@ -31,8 +31,10 @@ class ArrayPushComponent extends PolymerElement {
         return html`
             <style>
                 paper-input {
-                    width: 200px;
-                    margin-right: 20px;
+                    --paper-input-container: {
+                        width: 200px;
+                        margin-right: 20px;
+                    }
                 }
 
                 .container {

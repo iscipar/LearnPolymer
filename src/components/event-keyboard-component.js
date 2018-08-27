@@ -25,7 +25,9 @@ class EventKeyboardComponent extends PolymerElement {
         return html`
             <style>
                 paper-input {
-                    width: 250px;
+                    --paper-input-container: {
+                        width: 250px;
+                    }
                 }
 
                 paper-progress {

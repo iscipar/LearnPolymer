@@ -23,7 +23,9 @@ class CustomEventComponent extends PolymerElement {
         return html`
             <style>
                 paper-input {
-                    width: 300px;
+                    --paper-input-container: {
+                        width: 300px;
+                    }
                 }
 
                 .container {
