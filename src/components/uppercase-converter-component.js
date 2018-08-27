@@ -3,7 +3,7 @@ import '@polymer/paper-input/paper-input.js';
 import '@polymer/paper-button/paper-button.js';
 import {PropertiesMixin} from '../mixins/properties-mixin.js';
 import {UtilsMixin} from '../mixins/utils-mixin.js';
-import {EventsMixin} from '../mixins/events-mixin.js';
+import {CommonsMixin} from '../mixins/commons-mixin.js';
 
 /**
  * `uppercase-converter-component` Description
@@ -13,7 +13,7 @@ import {EventsMixin} from '../mixins/events-mixin.js';
  * @demo
  * 
  */
-class UppercaseConverterComponent extends EventsMixin(UtilsMixin(PropertiesMixin(PolymerElement))) {
+class UppercaseConverterComponent extends CommonsMixin(UtilsMixin(PropertiesMixin(PolymerElement))) {
     static get properties() {
         return {
             text: String
