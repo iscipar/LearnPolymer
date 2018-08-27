@@ -1,5 +1,4 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import '@polymer/paper-spinner/paper-spinner.js';
 import '@polymer/paper-slider/paper-slider.js';
 import '@webcomponents/shadycss/apply-shim.min.js';
 
@@ -32,9 +31,8 @@ class StyleCustomChildComponent extends PolymerElement {
                 }
             </style>
 
-            <p><b>Componentes que pertenecen al hijo</b></p>
+            <p><b>Componente que pertenece al hijo</b></p>
             <div class="container">
-                <paper-spinner active></paper-spinner>
                 <paper-slider min="0" max="10" pin editable></paper-slider>
             </div>
         `;

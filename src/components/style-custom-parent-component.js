@@ -1,5 +1,4 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import '@polymer/paper-spinner/paper-spinner.js';
 import '@polymer/paper-slider/paper-slider.js';
 import '@polymer/gold-cc-input/gold-cc-input.js';
 import './style-custom-child-component.js';
@@ -23,8 +22,6 @@ class StyleCustomParentComponent extends PolymerElement {
         return html`
             <style>
                 :host {
-                    --paper-spinner-layer-4-color: #795548;
-
                     --paper-slider-pin-start-color: #66bb6a;
 
                     --paper-slider-input: {
@@ -42,8 +39,8 @@ class StyleCustomParentComponent extends PolymerElement {
                     }
                 }
 
-                paper-spinner {
-                    --paper-spinner-stroke-width: 10px;
+                paper-slider {
+                    --paper-slider-bar-color: #ef5350;
                 }
 
                 gold-cc-input {
@@ -52,7 +49,6 @@ class StyleCustomParentComponent extends PolymerElement {
             </style>
 
             <p><b>Componentes que pertenecen al padre</b></p>
-            <paper-spinner active></paper-spinner>
             <paper-slider min="0" max="10" pin editable></paper-slider>
             <gold-cc-input label="Visa" auto-validate cardTypes="visa"></gold-cc-input>
             <style-custom-child-component></style-custom-child-component>
