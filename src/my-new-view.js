@@ -28,7 +28,7 @@ class MyNewView extends PolymerElement {
             </style>
 
             <div class="card">
-                <div class="circle">7</div>
+                <div class="circle">8</div>
                 <h1>Recursos</h1>
                 <a target="_blank" href="https://www.polymer-project.org">Polymer Project</a>
                 <br>
@@ -49,6 +49,9 @@ class MyNewView extends PolymerElement {
                 <br>
                 <br>
                 <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
+                <br>
+                <br>
+                <a target="_blank" href="https://vaadin.com/">Vaadin</a>
                 <br>
                 <br>
                 <paper-checkbox>¡Preparado para aprender!</paper-checkbox>

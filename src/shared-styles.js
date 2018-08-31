@@ -45,6 +45,52 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         width: 400px;
         margin-left: 290px;
       }
+
+      vaadin-form-layout {
+        --vaadin-form-layout-column-spacing: 250px;
+
+        padding: 0px 100px 0px 100px;
+
+        background: #ffffff;
+        background: -webkit-linear-gradient(to bottom, #ffffff, #f5f5f5);
+        background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+
+        border-style: solid;
+        border-width: 1px;
+        border-color: hsla(214, 64%, 82%, 0.23);
+      }
+
+      .vaadin-button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 5px;
+        margin-top: 10px;
+      }
+
+      vaadin-button {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      vaadin-grid { 
+        height: 300px;
+      }
+
+      vaadin-grid vaadin-text-field {
+        width: 100%;
+      }
+
+      .vaadin-grid-title-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .vaadin-item-title {
+        margin-left: -15px;
+        font-weight: bold;
+      }
     </style>
   </template>
 </dom-module>`;

@@ -1,0 +1,112 @@
+{
+  "civilstatus": [
+    {
+      "code": "S",
+      "description": "Soltero"
+    },
+    {
+      "code": "C",
+      "description": "Casado"
+    },
+    {
+      "code": "D",
+      "description": "Divorciado"
+    },
+    {
+      "code": "V",
+      "description": "Viudo"
+    }
+  ],
+  "people": [
+    {
+      "id": "5b8929410bcf905c93508339",
+      "firstname": "Todd",
+      "document": "34049351J",
+      "firstsurname": "Tucker",
+      "secondsurname": "Talley",
+      "birthdate": "03-03-1938",
+      "civilstatus": "S"
+    },
+    {
+      "id": "5b8929414b493ecef8c3e1fa",
+      "firstname": "Vonda",
+      "document": "26472601S",
+      "firstsurname": "Petty",
+      "secondsurname": "Burch",
+      "birthdate": "06-12-1905",
+      "civilstatus": "V"
+    },
+    {
+      "id": "5b892941cdb454f1489e9641",
+      "firstname": "June",
+      "document": "84691709M",
+      "firstsurname": "Day",
+      "secondsurname": "Cox",
+      "birthdate": "30-01-1955",
+      "civilstatus": "S"
+    },
+    {
+      "id": "5b8929414a5e1374081aae02",
+      "firstname": "Cathryn",
+      "document": "79437190C",
+      "firstsurname": "Maynard",
+      "secondsurname": "Estes",
+      "birthdate": "08-12-1948",
+      "civilstatus": "C"
+    },
+    {
+      "id": "5b892941a26294ae2bc43775",
+      "firstname": "Erika",
+      "document": "56896061H",
+      "firstsurname": "Gillespie",
+      "secondsurname": "Joyce",
+      "birthdate": "17-10-1980",
+      "civilstatus": "S"
+    },
+    {
+      "id": "5b89294135ad31460354156f",
+      "firstname": "Kelly",
+      "document": "02146365M",
+      "firstsurname": "Madden",
+      "secondsurname": "Oconnor",
+      "birthdate": "04-12-1971",
+      "civilstatus": "S"
+    },
+    {
+      "id": "5b8929414ff20b0d6f921de5",
+      "firstname": "Doreen",
+      "document": "39261155V",
+      "firstsurname": "Donaldson",
+      "secondsurname": "Rivas",
+      "birthdate": "03-12-1943",
+      "civilstatus": "S"
+    },
+    {
+      "id": "5b892941422bdbc4285889f6",
+      "firstname": "Rogers",
+      "document": "45836411X",
+      "firstsurname": "Cobb",
+      "secondsurname": "Schroeder",
+      "birthdate": "11-10-1993",
+      "civilstatus": "V"
+    },
+    {
+      "id": "5b892941afc64da35b88fd98",
+      "firstname": "Colleen",
+      "document": "94854919K",
+      "firstsurname": "Pugh",
+      "secondsurname": "Lowery",
+      "birthdate": "27-07-1939",
+      "civilstatus": "V"
+    },
+    {
+      "id": "5b892941ce6142eda01e07e0",
+      "firstname": "Chasity",
+      "document": "83703533R",
+      "firstsurname": "Wilder",
+      "secondsurname": "Strong",
+      "birthdate": "24-06-1929",
+      "civilstatus": "S"
+    }
+  ]
+}

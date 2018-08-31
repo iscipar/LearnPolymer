@@ -9,6 +9,10 @@ let internalCommonsMixin = (base) =>
                 composed: true
             }));
         }
+
+        checkMode(mode) {
+            return this.mode === mode;
+        }
     }
 
 export const CommonsMixin = dedupingMixin(internalCommonsMixin);

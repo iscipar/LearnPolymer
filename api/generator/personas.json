@@ -1,0 +1,22 @@
+[
+  "{{repeat(10)}}",
+  {
+    "id": "{{objectId()}}",
+    "firstname": "{{firstName()}}",
+    "document": function(tags) {
+      var num = Math.floor(Math.random() * 100000000);
+      var r = "" + num;
+      while (r.length < 8) {
+        r = "0" + r;
+      }
+      var chain = "TRWAGMYFPDXBNJZSQVHLCKET";
+      var pos = r % 23;
+      var letter = chain.substring(pos, pos + 1);
+      return r + letter;
+    },
+    "firstsurname": "{{surname()}}",
+    "secondsurname": "{{surname()}}",
+    "birthdate": "{{date(new Date(1900, 0, 1), new Date(2000, 0, 1), \"dd-MM-YYYY\")}}",
+    "civilstatus": "{{random(\"S\", \"C\", \"D\", \"V\")}}"
+  }
+]
