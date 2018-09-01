@@ -5,7 +5,8 @@ import '@vaadin/vaadin-text-field/vaadin-text-field.js';
 import '@vaadin/vaadin-date-picker/vaadin-date-picker.js';
 import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/vaadin-button.js';
-import '@vaadin/vaadin-combo-box/vaadin-combo-box.js';
+import '@vaadin/vaadin-list-box/vaadin-list-box.js';
+import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js';
 import '@polymer/iron-meta/iron-meta.js';
 import {PropertiesMixin} from '../mixins/properties-mixin.js';
 import {CommonsMixin} from '../mixins/commons-mixin.js';
@@ -53,12 +54,16 @@ class FormPeopleComponent extends CommonsMixin(PropertiesMixin(PolymerElement)) 
                 <vaadin-text-field label="[[label.firstsurname]]" value="{{person.firstsurname}}"></vaadin-text-field>
                 <vaadin-text-field label="[[label.secondsurname]]" value="{{person.secondsurname}}"></vaadin-text-field>
                 <template is="dom-if" if="[[!checkMode('search')]]">
-                    <vaadin-date-picker label="[[label.birthdate]]" value="{{person.birthdate}}"></vaadin-date-picker>
-                    <vaadin-combo-box label="[[label.civilstatus]]" items="[[civilstatus]]" item-label-path="description" item-value-path="code" value="{{person.civilstatus}}" style="width: 240px;">
+                    <vaadin-date-picker i18n="[[datepicker]]" label="[[label.birthdate]]" value="{{person.birthdate}}"></vaadin-date-picker>
+                    <vaadin-dropdown-menu label="[[label.civilstatus]]" placeholder="[[label.select]]" value="{{person.civilstatus}}">
                         <template>
-                            [[item.description]]
+                            <vaadin-list-box>
+                                <template is="dom-repeat" items="[[civilstatus]]">
+                                    <vaadin-item value="[[item.code]]">[[item.description]]</vaadin-item>
+                                </template>
+                            </vaadin-list-box>
                         </template>
-                    </vaadin-combo-box>
+                    </vaadin-dropdown-menu>
                 </template>
                 <vaadin-form-item></vaadin-form-item>
                 <vaadin-horizontal-layout class="vaadin-button-container">

@@ -14,7 +14,8 @@ let internalPropertiesMixin = (base) =>
                             firstsurname: 'Primer apellido',
                             secondsurname: 'Segundo apellido',
                             birthdate: 'Fecha nacimiento',
-                            civilstatus: 'Estado civil'
+                            civilstatus: 'Estado civil',
+                            select: '- Seleccione -'
                         }
                     }
                 },
@@ -53,6 +54,38 @@ let internalPropertiesMixin = (base) =>
                             incorrectupdate: 'Se ha producido un error durante el proceso de modificación',
                             correctdelete: 'La eliminación ha sido realizada correctamente',
                             incorrectdelete: 'Se ha producido un error durante el proceso de eliminación'
+                        }
+                    }
+                },
+                datepicker: {
+                    type: Object,
+                    value: function() {
+                        return {
+                            monthNames: [
+                                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo',
+                                'Junio', 'Julio', 'Agosto', 'Septiembre',
+                                'Octubre', 'Noviembre', 'Diciembre'
+                            ],
+                            weekdays: [
+                                'Domingo', 'Lunes', 'Martes', 'Miércoles',
+                                'Jueves', 'Viernes', 'Sábado'
+                            ],
+                            weekdaysShort: [
+                                'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'
+                            ],
+                            firstDayOfWeek: 1,
+                            week: 'Semana',
+                            calendar: 'Calendario',
+                            clear: 'Limpiar',
+                            today: 'Hoy',
+                            cancel: 'Cancelar',
+                            formatDate: d => {
+                                return moment(d).format('DD-MM-YYYY');
+                            },
+                            parseDate: null,
+                            formatTitle: (monthName, fullYear) => {
+                                return monthName + ' ' + fullYear;
+                            }
                         }
                     }
                 }
