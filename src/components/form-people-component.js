@@ -7,6 +7,7 @@ import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-combo-box/vaadin-combo-box.js';
 import '@polymer/iron-meta/iron-meta.js';
+import {PropertiesMixin} from '../mixins/properties-mixin.js';
 import {CommonsMixin} from '../mixins/commons-mixin.js';
 import '../shared-styles.js';
 import '../my-icons.js';
@@ -19,7 +20,7 @@ import '../my-icons.js';
  * @demo
  * 
  */
-class FormPeopleComponent extends CommonsMixin(PolymerElement) {
+class FormPeopleComponent extends CommonsMixin(PropertiesMixin(PolymerElement)) {
     static get properties() {
         return {
             mode: String,
@@ -41,19 +42,19 @@ class FormPeopleComponent extends CommonsMixin(PolymerElement) {
             <style include="shared-styles"></style>
 
             <template is="dom-if" if="[[checkMode('search')]]">
-                <vaadin-item class="vaadin-item-title"><iron-icon icon="my-icons:search"></iron-icon>Criterios de Búsqueda</vaadin-item>
+                <vaadin-item class="vaadin-item-title"><iron-icon icon="my-icons:search"></iron-icon>[[title.searchcriteria]]</vaadin-item>
             </template>
             <template is="dom-if" if="[[checkMode('new')]]">
-                <vaadin-item class="vaadin-item-title"><iron-icon icon="my-icons:add-box"></iron-icon>Alta de Personas</vaadin-item>
+                <vaadin-item class="vaadin-item-title"><iron-icon icon="my-icons:add-box"></iron-icon>[[title.newpeople]]</vaadin-item>
             </template>
             <vaadin-form-layout>
-                <vaadin-text-field label="Nombre" value="{{person.firstname}}"></vaadin-text-field>
-                <vaadin-text-field label="NIF" value="{{person.document}}"></vaadin-text-field>
-                <vaadin-text-field label="Primer apellido" value="{{person.firstsurname}}"></vaadin-text-field>
-                <vaadin-text-field label="Segundo apellido" value="{{person.secondsurname}}"></vaadin-text-field>
+                <vaadin-text-field label="[[label.firstname]]" value="{{person.firstname}}"></vaadin-text-field>
+                <vaadin-text-field label="[[label.document]]" value="{{person.document}}"></vaadin-text-field>
+                <vaadin-text-field label="[[label.firstsurname]]" value="{{person.firstsurname}}"></vaadin-text-field>
+                <vaadin-text-field label="[[label.secondsurname]]" value="{{person.secondsurname}}"></vaadin-text-field>
                 <template is="dom-if" if="[[!checkMode('search')]]">
-                    <vaadin-date-picker label="Fecha nacimiento" value="{{person.birthdate}}"></vaadin-date-picker>
-                    <vaadin-combo-box label="Estado civil" items="[[civilstatus]]" item-label-path="description" item-value-path="code" value="{{person.civilstatus}}" style="width: 240px;">
+                    <vaadin-date-picker label="[[label.birthdate]]" value="{{person.birthdate}}"></vaadin-date-picker>
+                    <vaadin-combo-box label="[[label.civilstatus]]" items="[[civilstatus]]" item-label-path="description" item-value-path="code" value="{{person.civilstatus}}" style="width: 240px;">
                         <template>
                             [[item.description]]
                         </template>
@@ -62,12 +63,12 @@ class FormPeopleComponent extends CommonsMixin(PolymerElement) {
                 <vaadin-form-item></vaadin-form-item>
                 <vaadin-horizontal-layout class="vaadin-button-container">
                     <template is="dom-if" if="[[checkMode('search')]]">
-                        <vaadin-button theme="error" on-click="clean">Limpiar</vaadin-button>
-                        <vaadin-button theme="error primary" on-click="search">Buscar</vaadin-button>
+                        <vaadin-button theme="error" on-click="clean">[[button.clean]]</vaadin-button>
+                        <vaadin-button theme="error primary" on-click="search">[[button.search]]</vaadin-button>
                     </template>
                     <template is="dom-if" if="[[checkMode('new')]]">
-                        <vaadin-button on-click="close">Cancelar</vaadin-button>
-                        <vaadin-button theme="primary" on-click="insert">Aceptar</vaadin-button>
+                        <vaadin-button on-click="close">[[button.cancel]]</vaadin-button>
+                        <vaadin-button theme="primary" on-click="insert">[[button.accept]]</vaadin-button>
                     </template>
                 </vaadin-horizontal-layout>
             </vaadin-form-layout>

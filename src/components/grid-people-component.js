@@ -5,6 +5,7 @@ import '@vaadin/vaadin-dialog/vaadin-dialog.js';
 import '@vaadin/vaadin-grid/vaadin-grid.js';
 import '@polymer/iron-meta/iron-meta.js';
 import './form-people-component.js';
+import {PropertiesMixin} from '../mixins/properties-mixin.js';
 import {UtilsMixin} from '../mixins/utils-mixin.js';
 import '../shared-styles.js';
 import '../my-icons.js';
@@ -17,7 +18,7 @@ import '../my-icons.js';
  * @demo
  * 
  */
-class GridPeopleComponent extends UtilsMixin(PolymerElement) {
+class GridPeopleComponent extends UtilsMixin(PropertiesMixin(PolymerElement)) {
     static get properties() {
         return {
             civilstatus: {
@@ -35,13 +36,13 @@ class GridPeopleComponent extends UtilsMixin(PolymerElement) {
         return html`
             <style include="shared-styles">
                 .vaadin-dialog-container {
-                    width: 60vw;
+                    width: 65vw;
                 }
             </style>
 
             <div class="vaadin-grid-title-container">
-                <vaadin-item class="vaadin-item-title"><iron-icon icon="my-icons:grid-on"></iron-icon>Listado de Personas</vaadin-item>
-                <vaadin-button theme="primary" on-click="showDialog">Alta</vaadin-button>
+                <vaadin-item class="vaadin-item-title"><iron-icon icon="my-icons:grid-on"></iron-icon>[[title.peoplelist]]</vaadin-item>
+                <vaadin-button theme="primary" on-click="showDialog">[[button.new]]</vaadin-button>
             </div>
             <vaadin-dialog id="dialog" no-close-on-esc no-close-on-outside-click>
                 <template>
@@ -52,37 +53,37 @@ class GridPeopleComponent extends UtilsMixin(PolymerElement) {
             </vaadin-dialog>
             <vaadin-grid theme="compact" id="grid" items="[[people]]">
                 <vaadin-grid-column resizable>
-                    <template class="header">Nombre</template>
+                    <template class="header">[[label.firstname]]</template>
                     <template>
                         <vaadin-text-field id="firstname-[[index]]" value="[[item.firstname]]" readonly$="[[!isEditing(editing, item)]]"></vaadin-text-field>
                     </template>
                 </vaadin-grid-column>
                 <vaadin-grid-column resizable>
-                    <template class="header">Documento</template>
+                    <template class="header">[[label.document]]</template>
                     <template>
                         <div>[[item.document]]</div>
                     </template>
                 </vaadin-grid-column>
                 <vaadin-grid-column resizable>
-                    <template class="header">Primer apellido</template>
+                    <template class="header">[[label.firstsurname]]</template>
                     <template>
                         <vaadin-text-field id="firstsurname-[[index]]" value="[[item.firstsurname]]" readonly$="[[!isEditing(editing, item)]]"></vaadin-text-field>
                     </template>
                 </vaadin-grid-column>
                 <vaadin-grid-column resizable>
-                    <template class="header">Segundo apellido</template>
+                    <template class="header">[[label.secondsurname]]</template>
                     <template>
                         <vaadin-text-field id="secondsurname-[[index]]" value="[[item.secondsurname]]" readonly$="[[!isEditing(editing, item)]]"></vaadin-text-field>
                     </template>
                 </vaadin-grid-column>
                 <vaadin-grid-column resizable>
-                    <template class="header">Fecha nacimiento</template>
+                    <template class="header">[[label.birthdate]]</template>
                     <template>
                         <div>[[item.birthdate]]</div>
                     </template>
                 </vaadin-grid-column>
                 <vaadin-grid-column resizable>
-                    <template class="header">Estado civil</template>
+                    <template class="header">[[label.civilstatus]]</template>
                     <template>
                         <div>[[mapCivilStatus(item.civilstatus)]]</div>
                     </template>
@@ -92,8 +93,8 @@ class GridPeopleComponent extends UtilsMixin(PolymerElement) {
                         <div style="text-align: right;">
                             <vaadin-button id="edit-button" hidden="[[editing]]" on-click="edit" focus-target$="[[!editing]]" theme="icon" aria-label="Edit"><iron-icon icon="my-icons:mode-edit"></iron-icon></vaadin-button>
                             <vaadin-button hidden="[[editing]]" on-click="delete" theme="icon error" aria-label="Delete"><iron-icon icon="my-icons:delete"></iron-icon></vaadin-button>
-                            <vaadin-button hidden="[[!isEditing(editing, item)]]" on-click="save" focus-target$="[[editing]]" theme="primary">Guardar</vaadin-button>
-                            <vaadin-button hidden="[[!isEditing(editing, item)]]" on-click="cancel">Cancelar</vaadin-button>
+                            <vaadin-button hidden="[[!isEditing(editing, item)]]" on-click="save" focus-target$="[[editing]]" theme="primary">[[button.save]]</vaadin-button>
+                            <vaadin-button hidden="[[!isEditing(editing, item)]]" on-click="cancel">[[button.cancel]]</vaadin-button>
                         </div>
                     </template>
                 </vaadin-grid-column>

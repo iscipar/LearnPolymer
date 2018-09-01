@@ -1,6 +1,7 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import '@polymer/iron-ajax/iron-ajax.js';
 import '@polymer/iron-meta/iron-meta.js';
+import {PropertiesMixin} from '../mixins/properties-mixin.js';
 import {ConfigMixin} from '../mixins/config-mixin.js';
 import {CommonsMixin} from '../mixins/commons-mixin.js';
 
@@ -12,7 +13,7 @@ import {CommonsMixin} from '../mixins/commons-mixin.js';
  * @demo
  * 
  */
-class PeopleService extends CommonsMixin(ConfigMixin(PolymerElement)) {
+class PeopleService extends CommonsMixin(ConfigMixin(PropertiesMixin(PolymerElement))) {
     static get properties() {
         return {
             url: {
@@ -122,7 +123,7 @@ class PeopleService extends CommonsMixin(ConfigMixin(PolymerElement)) {
 
     selectResponse() {
         if (this.people.length == 0) {
-            this.fire('show-dialog', { mode: 'info', message: 'No existen resultados según los criterios de búsqueda introducidos' });
+            this.fire('show-dialog', { mode: 'info', message: this.message.withoutresults });
         }
     }
 
@@ -132,12 +133,12 @@ class PeopleService extends CommonsMixin(ConfigMixin(PolymerElement)) {
     }
 
     insertResponse() {
-        this.fire('show-dialog', { mode: 'info', message: 'El alta ha sido realizada correctamente' });
+        this.fire('show-dialog', { mode: 'info', message: this.message.correctinsertion });
         this.$.ajaxselect.generateRequest();
     }
 
     insertError() {
-        this.fire('show-dialog', { mode: 'error', message: 'Se ha producido un error durante el proceso de alta' });
+        this.fire('show-dialog', { mode: 'error', message: this.message.incorrectinsertion });
     }
 
     update(person) {
@@ -147,12 +148,12 @@ class PeopleService extends CommonsMixin(ConfigMixin(PolymerElement)) {
     }
 
     updateResponse() {
-        this.fire('show-dialog', { mode: 'info', message: 'La modificación ha sido realizada correctamente' });
+        this.fire('show-dialog', { mode: 'info', message: this.message.correctupdate });
         this.$.ajaxselect.generateRequest();
     }
 
     updateError() {
-        this.fire('show-dialog', { mode: 'error', message: 'Se ha producido un error durante el proceso de modificación' });
+        this.fire('show-dialog', { mode: 'error', message: this.message.incorrectupdate });
     }
 
     delete(id) {
@@ -161,12 +162,12 @@ class PeopleService extends CommonsMixin(ConfigMixin(PolymerElement)) {
     }
 
     deleteResponse() {
-        this.fire('show-dialog', { mode: 'info', message: 'La eliminación ha sido realizada correctamente' });
+        this.fire('show-dialog', { mode: 'info', message: this.message.correctdelete });
         this.$.ajaxselect.generateRequest();
     }
 
     deleteError() {
-        this.fire('show-dialog', { mode: 'error', message: 'Se ha producido un error durante el proceso de eliminación' });
+        this.fire('show-dialog', { mode: 'error', message: this.message.incorrectdelete });
     }
 }
 
